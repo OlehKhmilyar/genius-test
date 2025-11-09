@@ -1,3 +1,39 @@
+/* poppins-300 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/poppins-v24-latin-300.woff2') format('woff2');
+}
+
+/* poppins-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/poppins-v24-latin-regular.woff2') format('woff2');
+}
+
+/* poppins-600 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/poppins-v24-latin-600.woff2') format('woff2');
+}
+
+/* poppins-900 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/poppins-v24-latin-900.woff2') format('woff2');
+    }
+
 :root {
     --color-primary-light: #FAF4EA;
     --color-primary-dark: #31261A;
@@ -27,6 +63,8 @@ address {
 }
 
 ul {
+    margin: 0;
+    padding: 0;
     list-style-type: none;
 }
 
@@ -44,17 +82,18 @@ ul {
     padding: 48px 0;
 }
 
-.container-full {
+/* .container-full {
     width: 100%;
     max-width: 1488px;
     padding: 0 24px;
     margin: 0 auto;
-}
+} */
 
 .container {
     width: 100%;
-    max-width: 1240px;
+    max-width: 1288px;
     margin: 0 auto;
+    padding: 0 24px;
     
 }
 
@@ -66,6 +105,28 @@ ul {
 
 .section-title .accent {
     color: var(--color-brand-dark);
+}
+
+/* header */
+
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.header-nav {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.header-menu {
+    display: flex;
+    gap: 64px;
+    flex-grow: 1;
+    justify-content: center;
 }
 
 .button {
@@ -90,7 +151,7 @@ ul {
 
 .link:hover {
     color: var(--color-brand-light);
-    font-weight: 600;
+    /* font-weight: 600; */
 }
 
 /* hero section */
@@ -113,12 +174,19 @@ ul {
 
 /* adventage section */
 
-.advantages-list {
-    color: var(--color-primary-light);
+.advantages-section {
     background-color: var(--color-brand-light);
 }
 
+.advantages-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 16px 0;
+}
+
 .advantages-item {
+    color: var(--color-primary-light);
     font-size: 20px;
     font-weight: 300;
 }
@@ -126,6 +194,16 @@ ul {
 /* tradition section */
 .traditions-section {
     padding-top: 96px;
+}
+
+.traditions-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.traditions-content {
+    max-width: 710px;
 }
 
 .traditions-title {
@@ -141,8 +219,17 @@ ul {
     text-transform: uppercase;
 }
 
+.traditions-text.limited {
+    max-width: 360px;
+}
+
 /* chefs section */
+
 .chefs-title {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 532px;
+    text-align: center;
     margin-bottom: 80px;
 }
 
@@ -152,10 +239,39 @@ ul {
     font-weight: 600;
 }
 
+.chefs-list {
+    display: flex;
+    gap: 30px;
+}
+
+.chef-card {
+    display: flex;
+    gap: 30px;
+}
+
+.chef-text {
+    width: 100%;
+    max-width: 334px;
+}
+
 /* formats section */
 
 .formats-title {
+    width: 100%;
+    max-width: 310px;
+    margin: 0 auto;
     margin-bottom: 80px;
+}
+
+.formats-list {
+    display: flex;
+    gap: 20px;
+}
+
+.format-card {
+    padding: 24px;
+    border: 1px solid red;
+    border-radius: 16px;
 }
 
 .format-title {
