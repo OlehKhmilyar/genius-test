@@ -81,6 +81,7 @@
             <li>
               <article class="chef-card">
                 <img
+                  class="chef-photo"
                   src="./images/coocker1.jpg"
                   alt="Жінка-кухар з круасаном на тарілці в руці"
                 />
@@ -95,6 +96,7 @@
             <li>
               <article class="chef-card">
                 <img
+                  class="chef-photo"
                   src="./images/coocker2.jpg"
                   alt="Кухар чоловік з качалкою в руках"
                 />
@@ -116,8 +118,13 @@
       <section class="section" id="formats-section">
         <div class="container">
           <h2 class="formats-title section-title">Формати</h2>
+          <button class="carrousel-button" type="button">
+            <svg width="16px" height="16px">
+              <use href="../images/icons.svg#icon-Arrow"></use>
+            </svg>
+          </button>
           <ul class="formats-list">
-            <li>
+            <li class="formats-item">
               <article class="format-card">
                 <h3 class="format-title" lang="en">Walrus</h3>
                 <div class="format-text">
@@ -131,7 +138,7 @@
                 </div>
               </article>
             </li>
-            <li>
+            <li class="formats-item">
               <article class="format-card">
                 <h3 class="format-title" lang="en">Horseshoe</h3>
                 <div class="format-text">
@@ -142,7 +149,7 @@
                 </div>
               </article>
             </li>
-            <li>
+            <li class="formats-item">
               <article class="format-card">
                 <h3 class="format-title" lang="en">Handlebar</h3>
                 <div class="format-text">
@@ -154,6 +161,11 @@
               </article>
             </li>
           </ul>
+          <button class="carrousel-button" type="button">
+            <svg width="16px" height="16px">
+              <use href="../images/icons.svg#icon-Arrow"></use>
+            </svg>
+          </button>
         </div>
       </section>
       <section class="section" id="contact-section">
@@ -172,7 +184,7 @@
         </div>
       </section>
     </main>
-    <footer>
+    <footer class="footer">
       <div class="container">
         <nav>
           <a href="/">
@@ -210,12 +222,16 @@
             </li>
             <li>
               <a href="#">
-                <!-- facebook icon -->
+                <svg class="address-icon" width="32px" height="32px">
+                  <use href="../images/icons.svg#icon-facebook"></use>
+                </svg>
               </a>
             </li>
             <li>
               <a href="#">
-                <!-- instagram icon -->
+                <svg class="address-icon" width="32px" height="32px">
+                  <use href="../images/icons.svg#icon-instagram"></use>
+                </svg>
               </a>
             </li>
           </ul>
