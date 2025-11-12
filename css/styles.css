@@ -42,7 +42,9 @@
   --color-brand-dark: #465929;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -50,7 +52,7 @@ body {
   margin: 0;
   color: var(--color-primary-dark);
   background-color: var(--color-primary-light);
-  font-family: Poppins, sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
@@ -64,6 +66,10 @@ h5,
 h6,
 p {
   margin-top: 0;
+}
+
+a {
+  display: inline-block;
 }
 
 address {
@@ -116,7 +122,9 @@ ul {
 /* header */
 
 .header-container {
+  /* position: absolute; */
   display: flex;
+  /* justify-content: space-between; */
   align-items: center;
   gap: 40px;
 }
@@ -234,27 +242,35 @@ ul {
   max-width: 360px;
 }
 
+.traditions-image {
+  border-top-left-radius: 400px;
+  border-top-right-radius: 400px;
+}
+
 /* chefs section */
 
 .chefs-title {
+  position: relative;
   text-align: center;
   margin: 0 auto 80px;
-  width: 100%;
-  max-width: 532px;
 }
 
-.chefs-title::before {
-  display: block;
-  content: '';
-  width: 352px;
-  border: 2px solid var(--color-brand-light);
-}
-
+.chefs-title::before,
 .chefs-title::after {
   display: block;
   content: '';
   width: 352px;
   border: 2px solid var(--color-brand-light);
+  position: absolute;
+  bottom: 24px;
+}
+
+.chefs-title::before {
+  left: 0;
+}
+
+.chefs-title::after {
+  right: 0;
 }
 
 .chef-title {
@@ -265,7 +281,12 @@ ul {
 
 .chefs-list {
   display: flex;
-  gap: 30px;
+  gap: 40px 30px;
+  flex-wrap: wrap;
+}
+
+.chefs-item {
+  flex-basis: calc((100% - 30px) / 2);
 }
 
 .chef-card {
@@ -279,9 +300,12 @@ ul {
     -16px 16px 0 1px #a18268;
 }
 
-.chef-text {
-  width: 100%;
-  max-width: 334px;
+.chef-text p {
+  margin-bottom: 24px;
+}
+
+.chef-text p:last-child {
+  margin-bottom: 0;
 }
 
 /* formats section */
@@ -290,6 +314,12 @@ ul {
   width: 100%;
   max-width: 310px;
   margin: 0 auto 80px;
+}
+
+.formats-container {
+  display: flex;
+  gap: 33px;
+  align-items: center;
 }
 
 .formats-list {
@@ -324,6 +354,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   width: 44px;
   height: 44px;
   padding: 0;
@@ -341,24 +372,85 @@ ul {
 
 /* contact section */
 
+.contact-section {
+  padding-bottom: 96px;
+}
+
+.contact-container {
+  display: flex;
+  gap: 32px;
+}
+
 .contact-title {
   margin-bottom: 16px;
 }
 
 .map {
+  flex-shrink: 0;
+  border: none;
+  border-radius: 16px;
   width: 100%;
-  max-width: 604px;
+  max-width: 603px;
   height: 595px;
 }
 
 /* footer */
 
 .footer {
+  position: relative;
+  padding: 32px 0;
   background-color: var(--color-primary-dark);
   background-image: url(../images/footer-background.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.footer::before,
+.footer::after {
+  position: absolute;
+  bottom: 0;
+  content: '';
+  background-repeat: no-repeat;
+}
+
+.footer::before {
+  width: 180px;
+  height: 120px;
+  bottom: 0;
+  left: 0;
+  background-image: url(../images/decor-bread-small.png);
+}
+
+.footer::after {
+  width: 380px;
+  height: 190px;
+  right: 0;
+  background-image: url(../images/decor-bread-big.png);
+}
+
+.footer-container {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-nav {
+  flex-basis: 50%;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-address {
+  flex-basis: 50%;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-logo,
+.footer-menu,
+.address-menu,
+.address-info {
+  flex-grow: 1;
 }
 
 .address-link {
@@ -379,4 +471,38 @@ ul {
 .address-copyright {
   color: #a18268;
   font-size: 14px;
+}
+
+/* Modal */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal {
+  position: relative;
+  width: 880px;
+  height: 880px;
+  background-color: var(--color-primary-light);
+  border-radius: 32px;
+}
+
+.modal-btn-close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
 }
